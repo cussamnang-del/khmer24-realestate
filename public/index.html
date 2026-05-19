@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Khmer Realty - Buy, sell and rent properties across Cambodia. Find houses, apartments, villas, land and commercial real estate in Phnom Penh, Siem Reap, Sihanoukville and more." />
+  <title>Khmer Realty - Real Estate Cambodia | Houses, Apartments, Land for Sale & Rent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f97316'/%3E%3Cpath d='M8 16 L16 9 L24 16 V23 H18 V18 H14 V23 H8 Z' fill='white'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./output.css" />
+</head>
+<body class="min-h-screen">
+
+  <!-- Top promo bar -->
+  <div class="bg-ink-900 text-white text-xs">
+    <div class="mx-auto max-w-7xl px-4 py-1.5 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <span class="hidden sm:inline">Welcome to Khmer Realty - Cambodia's #1 property marketplace</span>
+        <span class="sm:hidden">Khmer Realty</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="hover:text-brand-300 transition flex items-center gap-1">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.99 7.99 0 0 1 5.08 16zm2.95-8H5.08a7.99 7.99 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+          <span id="langLabel">EN</span>
+        </button>
+        <span class="text-ink-500">|</span>
+        <a href="#" class="hover:text-brand-300 transition hidden sm:inline">Help</a>
+        <span class="text-ink-500 hidden sm:inline">|</span>
+        <a href="#" class="hover:text-brand-300 transition">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white border-b border-ink-200">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center gap-3 sm:gap-6">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 shrink-0">
+        <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 grid place-items-center shadow-sm">
+          <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12 L12 4 L21 12 V20 H15 V14 H9 V20 H3 Z"/>
+          </svg>
+        </div>
+        <div class="hidden sm:block leading-tight">
+          <div class="font-bold text-ink-900 text-base">Khmer Realty</div>
+          <div class="text-[10px] text-ink-500 uppercase tracking-wider">Cambodia Property</div>
+        </div>
+      </a>
+
+      <!-- Search -->
+      <div class="flex-1 max-w-2xl">
+        <div class="flex rounded-lg border border-ink-200 overflow-hidden focus-within:border-brand-400 focus-within:ring-2 focus-within:ring-brand-100 transition bg-white">
+          <select id="searchCategory" class="hidden md:block bg-white text-sm px-3 py-2.5 border-r border-ink-200 text-ink-700 focus:outline-none cursor-pointer">
+            <option value="all">All Properties</option>
+            <option value="apartment">Apartments</option>
+            <option value="house">Houses</option>
+            <option value="villa">Villas</option>
+            <option value="condo">Condos</option>
+            <option value="land">Land</option>
+            <option value="commercial">Commercial</option>
+          </select>
+          <input id="searchInput" type="text" placeholder="Search by location, title, keyword..." class="flex-1 px-3 py-2.5 text-sm placeholder:text-ink-400 focus:outline-none" />
+          <button id="searchBtn" class="px-4 sm:px-5 bg-brand-500 text-white hover:bg-brand-600 transition flex items-center gap-1">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span class="hidden sm:inline text-sm font-medium">Search</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="hidden md:flex items-center gap-1">
+        <button class="icon-btn" title="Favorites">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg>
+        </button>
+        <button class="icon-btn relative" title="Messages">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-brand-500"></span>
+        </button>
+      </div>
+
+      <a href="#" id="postAdBtn" class="btn-primary !py-2.5 whitespace-nowrap">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span class="hidden sm:inline">Post Ad</span>
+      </a>
+    </div>
+
+    <!-- Categories nav -->
+    <nav class="border-t border-ink-100 bg-white">
+      <div class="mx-auto max-w-7xl px-4">
+        <ul id="categoryNav" class="flex items-center gap-1 overflow-x-auto no-scrollbar py-2 text-sm">
+          <!-- populated by JS -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero / Filters strip -->
+  <section class="bg-gradient-to-br from-brand-50 via-white to-ink-50 border-b border-ink-100">
+    <div class="mx-auto max-w-7xl px-4 py-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-100 text-brand-700 px-3 py-1 text-xs font-semibold">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-500 animate-pulse"></span>
+            <span id="liveCount">1,247</span> active listings
+          </span>
+          <h1 class="mt-3 text-3xl sm:text-4xl font-bold text-ink-900 tracking-tight">
+            Find your next home in <span class="text-brand-600">Cambodia</span>
+          </h1>
+          <p class="mt-2 text-ink-600 max-w-xl">
+            Browse thousands of houses, apartments, villas and land for sale or rent across Phnom Penh, Siem Reap, Sihanoukville and beyond.
+          </p>
+
+          <!-- Quick stat tabs -->
+          <div class="mt-5 inline-flex rounded-lg bg-white p-1 shadow-sm border border-ink-200">
+            <button data-listing-type="sale" class="listing-type-tab px-4 py-1.5 rounded-md text-sm font-medium bg-brand-500 text-white">For Sale</button>
+            <button data-listing-type="rent" class="listing-type-tab px-4 py-1.5 rounded-md text-sm font-medium text-ink-600 hover:text-ink-900">For Rent</button>
+            <button data-listing-type="all" class="listing-type-tab px-4 py-1.5 rounded-md text-sm font-medium text-ink-600 hover:text-ink-900">All</button>
+          </div>
+        </div>
+
+        <!-- Hero stats / featured -->
+        <div class="grid grid-cols-3 gap-3 lg:gap-4">
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-ink-100">
+            <div class="text-2xl font-bold text-ink-900" id="statListings">—</div>
+            <div class="text-xs text-ink-500 mt-1">Total Listings</div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-ink-100">
+            <div class="text-2xl font-bold text-ink-900" id="statCities">25+</div>
+            <div class="text-xs text-ink-500 mt-1">Cities Covered</div>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm border border-ink-100">
+            <div class="text-2xl font-bold text-ink-900" id="statAgents">800+</div>
+            <div class="text-xs text-ink-500 mt-1">Verified Agents</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main layout -->
+  <main class="mx-auto max-w-7xl px-4 py-6">
+    <div class="grid grid-cols-12 gap-6">
+
+      <!-- Filter sidebar -->
+      <aside class="col-span-12 lg:col-span-3">
+        <div class="sticky top-32 bg-white rounded-xl border border-ink-200 p-4 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="font-semibold text-ink-900">Filters</h2>
+            <button id="resetFilters" class="text-xs text-brand-600 hover:text-brand-700 font-medium">Reset all</button>
+          </div>
+
+          <!-- Location -->
+          <div class="mb-5">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Location</label>
+            <select id="filterLocation" class="input">
+              <option value="">All Cambodia</option>
+              <option>Phnom Penh</option>
+              <option>Siem Reap</option>
+              <option>Sihanoukville</option>
+              <option>Battambang</option>
+              <option>Kampot</option>
+              <option>Kep</option>
+              <option>Kandal</option>
+            </select>
+          </div>
+
+          <!-- Property type -->
+          <div class="mb-5">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Property Type</label>
+            <div id="filterType" class="flex flex-wrap gap-1.5">
+              <!-- chips injected -->
+            </div>
+          </div>
+
+          <!-- Price range -->
+          <div class="mb-5">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Price (USD)</label>
+            <div class="grid grid-cols-2 gap-2">
+              <input id="filterMinPrice" type="number" placeholder="Min" class="input" min="0" />
+              <input id="filterMaxPrice" type="number" placeholder="Max" class="input" min="0" />
+            </div>
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              <button class="chip price-preset" data-min="0" data-max="500">&lt; $500</button>
+              <button class="chip price-preset" data-min="500" data-max="1500">$500–1.5K</button>
+              <button class="chip price-preset" data-min="1500" data-max="5000">$1.5K–5K</button>
+              <button class="chip price-preset" data-min="5000" data-max="0">$5K+</button>
+            </div>
+          </div>
+
+          <!-- Beds -->
+          <div class="mb-5">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Bedrooms</label>
+            <div class="flex gap-1.5">
+              <button class="chip bed-chip" data-beds="any">Any</button>
+              <button class="chip bed-chip" data-beds="1">1+</button>
+              <button class="chip bed-chip" data-beds="2">2+</button>
+              <button class="chip bed-chip" data-beds="3">3+</button>
+              <button class="chip bed-chip" data-beds="4">4+</button>
+            </div>
+          </div>
+
+          <!-- Baths -->
+          <div class="mb-5">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Bathrooms</label>
+            <div class="flex gap-1.5">
+              <button class="chip bath-chip" data-baths="any">Any</button>
+              <button class="chip bath-chip" data-baths="1">1+</button>
+              <button class="chip bath-chip" data-baths="2">2+</button>
+              <button class="chip bath-chip" data-baths="3">3+</button>
+            </div>
+          </div>
+
+          <!-- Area -->
+          <div class="mb-5">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Area (m²)</label>
+            <div class="grid grid-cols-2 gap-2">
+              <input id="filterMinArea" type="number" placeholder="Min m²" class="input" min="0" />
+              <input id="filterMaxArea" type="number" placeholder="Max m²" class="input" min="0" />
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="mb-2">
+            <label class="block text-xs font-semibold text-ink-700 uppercase tracking-wide mb-2">Features</label>
+            <div class="space-y-2 text-sm">
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="feature-cb accent-brand-500" value="parking" />
+                <span>Parking</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="feature-cb accent-brand-500" value="pool" />
+                <span>Swimming Pool</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="feature-cb accent-brand-500" value="gym" />
+                <span>Gym</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="feature-cb accent-brand-500" value="furnished" />
+                <span>Furnished</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer">
+                <input type="checkbox" class="feature-cb accent-brand-500" value="balcony" />
+                <span>Balcony / Garden</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Listings column -->
+      <section class="col-span-12 lg:col-span-9">
+
+        <!-- Toolbar -->
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div>
+            <h2 class="section-title">Properties</h2>
+            <p class="text-sm text-ink-500"><span id="resultCount">0</span> results found</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="hidden sm:flex rounded-lg border border-ink-200 bg-white">
+              <button id="viewGrid" class="p-2 text-brand-600 bg-brand-50 rounded-l-lg" title="Grid view">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              </button>
+              <button id="viewList" class="p-2 text-ink-500 hover:text-ink-700 rounded-r-lg" title="List view">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              </button>
+            </div>
+            <select id="sortBy" class="input !w-auto !py-2 text-sm cursor-pointer">
+              <option value="featured">Featured first</option>
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="area-desc">Largest area</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Active filter pills -->
+        <div id="activeFilters" class="flex flex-wrap gap-2 mb-3"></div>
+
+        <!-- Featured strip -->
+        <div id="featuredSection" class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-semibold text-ink-900 flex items-center gap-2">
+              <svg class="h-4 w-4 text-brand-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>
+              Featured Listings
+            </h3>
+            <a href="#" class="text-sm text-brand-600 hover:text-brand-700 font-medium">View all →</a>
+          </div>
+          <div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- All listings grid -->
+        <div id="listingsGrid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+
+        <!-- Empty state -->
+        <div id="emptyState" class="hidden text-center py-16">
+          <div class="mx-auto h-16 w-16 rounded-full bg-ink-100 grid place-items-center mb-3">
+            <svg class="h-7 w-7 text-ink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h3 class="font-semibold text-ink-900">No listings match your filters</h3>
+          <p class="text-sm text-ink-500 mt-1">Try adjusting your search or resetting filters.</p>
+          <button onclick="window.resetAllFilters && window.resetAllFilters()" class="btn-outline mt-4">Reset filters</button>
+        </div>
+
+        <!-- Load more -->
+        <div class="mt-8 flex justify-center">
+          <button id="loadMoreBtn" class="btn-outline">Load more listings</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Why Khmer Realty -->
+  <section class="bg-white border-t border-ink-100 mt-10">
+    <div class="mx-auto max-w-7xl px-4 py-12">
+      <h2 class="text-center text-2xl font-bold text-ink-900">Why choose Khmer Realty?</h2>
+      <p class="text-center text-ink-500 mt-2 max-w-2xl mx-auto">Cambodia's most trusted property marketplace with verified listings and local experts.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+        <div class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-xl bg-brand-100 text-brand-600 grid place-items-center">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="mt-3 font-semibold text-ink-900">Verified Listings</h3>
+          <p class="text-sm text-ink-500 mt-1">Every property is reviewed for accuracy and authenticity.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-xl bg-brand-100 text-brand-600 grid place-items-center">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="mt-3 font-semibold text-ink-900">Real-time Updates</h3>
+          <p class="text-sm text-ink-500 mt-1">New listings posted daily across all 25 provinces.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-xl bg-brand-100 text-brand-600 grid place-items-center">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="mt-3 font-semibold text-ink-900">Direct Contact</h3>
+          <p class="text-sm text-ink-500 mt-1">Connect with owners and agents instantly via chat or phone.</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-12 w-12 rounded-xl bg-brand-100 text-brand-600 grid place-items-center">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L15 8 L22 9 L17 14 L18 21 L12 17 L6 21 L7 14 L2 9 L9 8 Z"/></svg>
+          </div>
+          <h3 class="mt-3 font-semibold text-ink-900">Trusted by 500K+</h3>
+          <p class="text-sm text-ink-500 mt-1">Cambodia's largest community of property seekers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-ink-900 text-ink-300 mt-0">
+    <div class="mx-auto max-w-7xl px-4 py-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-2">
+            <div class="h-9 w-9 rounded-lg bg-gradient-to-br from-brand-400 to-brand-600 grid place-items-center">
+              <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 12 L12 4 L21 12 V20 H15 V14 H9 V20 H3 Z"/></svg>
+            </div>
+            <div class="font-bold text-white">Khmer Realty</div>
+          </div>
+          <p class="mt-3 text-sm text-ink-400">Cambodia's leading real estate marketplace. Find your dream home or list your property with confidence.</p>
+          <div class="mt-4 flex items-center gap-2">
+            <a href="#" class="icon-btn !bg-ink-800 !text-ink-300 hover:!bg-brand-500 hover:!text-white"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+            <a href="#" class="icon-btn !bg-ink-800 !text-ink-300 hover:!bg-brand-500 hover:!text-white"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.8c-3.15 0-3.5.01-4.73.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.26.82-.38.38-.62.75-.82 1.26-.15.39-.33.97-.38 2.04-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.05 1.07.23 1.65.38 2.04.2.51.44.88.82 1.26.38.38.75.62 1.26.82.39.15.97.33 2.04.38 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.26-.82.38-.38.62-.75.82-1.26.15-.39.33-.97.38-2.04.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.05-1.07-.23-1.65-.38-2.04a3.36 3.36 0 0 0-.82-1.26 3.36 3.36 0 0 0-1.26-.82c-.39-.15-.97-.33-2.04-.38C15.5 3.97 15.15 3.96 12 3.96zm0 3.07a4.97 4.97 0 1 1 0 9.94 4.97 4.97 0 0 1 0-9.94zm0 8.2a3.23 3.23 0 1 0 0-6.46 3.23 3.23 0 0 0 0 6.46zm6.34-8.4a1.16 1.16 0 1 1-2.33 0 1.16 1.16 0 0 1 2.33 0z"/></svg></a>
+            <a href="#" class="icon-btn !bg-ink-800 !text-ink-300 hover:!bg-brand-500 hover:!text-white"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.5c0 .2 0 .3 0 .5C19.6 12.4 15.5 19 8 19c-2.3 0-4.4-.7-6.2-1.8 0 0 .2 0 .5 0 1.9 0 3.6-.6 5-1.7-1.8 0-3.3-1.2-3.8-2.8.3 0 .5.1.8.1.4 0 .7 0 1.1-.1A4 4 0 0 1 2.1 8.7v0c.5.3 1.2.5 1.8.5A4 4 0 0 1 2 5.9c0-.7.2-1.4.5-2 2 2.4 5 4 8.4 4.2-.1-.3-.1-.6-.1-.9 0-2.2 1.8-4 4-4 1.2 0 2.2.5 3 1.3.9-.2 1.8-.5 2.5-1-.3 1-.9 1.8-1.7 2.2.8-.1 1.6-.3 2.3-.6-.5.8-1.2 1.5-2 2z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Browse</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-brand-400">Houses for sale</a></li>
+            <li><a href="#" class="hover:text-brand-400">Apartments for rent</a></li>
+            <li><a href="#" class="hover:text-brand-400">Land</a></li>
+            <li><a href="#" class="hover:text-brand-400">Commercial</a></li>
+            <li><a href="#" class="hover:text-brand-400">Villas</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-brand-400">About us</a></li>
+            <li><a href="#" class="hover:text-brand-400">Careers</a></li>
+            <li><a href="#" class="hover:text-brand-400">Press</a></li>
+            <li><a href="#" class="hover:text-brand-400">Blog</a></li>
+            <li><a href="#" class="hover:text-brand-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Support</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-brand-400">Help Center</a></li>
+            <li><a href="#" class="hover:text-brand-400">Safety tips</a></li>
+            <li><a href="#" class="hover:text-brand-400">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-brand-400">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-brand-400">Report a listing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-ink-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500">
+        <div>© 2024 Khmer Realty. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-brand-400">Terms</a>
+          <a href="#" class="hover:text-brand-400">Privacy</a>
+          <a href="#" class="hover:text-brand-400">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Property Detail Modal -->
+  <div id="modal" class="hidden fixed inset-0 z-50">
+    <div id="modalBackdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm backdrop-enter"></div>
+    <div class="relative h-full w-full overflow-y-auto flex items-start justify-center p-4 sm:p-8">
+      <div class="modal-enter w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div class="relative">
+          <div id="modalImage" class="aspect-[16/10] bg-ink-100 bg-cover bg-center"></div>
+          <button id="modalClose" class="absolute top-3 right-3 h-9 w-9 rounded-full bg-white/90 hover:bg-white text-ink-700 grid place-items-center shadow-lg transition">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <div id="modalThumbs" class="absolute bottom-3 left-3 flex gap-1.5"></div>
+        </div>
+        <div class="p-5 sm:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-wrap gap-1.5 mb-2" id="modalBadges"></div>
+              <h2 id="modalTitle" class="text-xl sm:text-2xl font-bold text-ink-900"></h2>
+              <p id="modalLocation" class="text-sm text-ink-500 mt-1 flex items-center gap-1">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span></span>
+              </p>
+            </div>
+            <div class="text-right">
+              <div id="modalPrice" class="text-2xl font-bold text-brand-600"></div>
+              <div id="modalPriceUnit" class="text-xs text-ink-500"></div>
+            </div>
+          </div>
+
+          <div id="modalSpecs" class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3"></div>
+
+          <div class="mt-5">
+            <h3 class="font-semibold text-ink-900">Description</h3>
+            <p id="modalDesc" class="mt-1.5 text-sm text-ink-600 leading-relaxed"></p>
+          </div>
+
+          <div class="mt-5">
+            <h3 class="font-semibold text-ink-900">Features</h3>
+            <div id="modalFeatures" class="mt-2 flex flex-wrap gap-1.5"></div>
+          </div>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-3 pt-5 border-t border-ink-100">
+            <button class="btn-primary !py-3">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span id="modalPhone">Call agent</span>
+            </button>
+            <button class="btn-outline !py-3">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Message agent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
+    <div class="bg-ink-900 text-white text-sm px-4 py-2.5 rounded-lg shadow-lg flex items-center gap-2">
+      <span id="toastMsg"></span>
+    </div>
+  </div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
