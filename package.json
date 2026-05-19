@@ -1,0 +1,19 @@
+{
+  "name": "khmer-realty",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Real-estate marketplace frontend inspired by Khmer24, built with HTML, Tailwind CSS 4, and vanilla JavaScript.",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./public/output.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./public/output.css --watch",
+    "serve": "python3 -m http.server 8080 --directory public",
+    "start": "npm run build && npm run serve"
+  },
+  "keywords": ["real-estate", "cambodia", "khmer24", "tailwind", "tailwindcss-4"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

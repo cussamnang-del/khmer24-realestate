@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+
+  --font-display: "Inter", "Noto Sans Khmer", system-ui, sans-serif;
+  --font-body: "Inter", "Noto Sans Khmer", system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 1px 3px rgb(15 23 42 / 0.06);
+  --shadow-card-hover: 0 8px 24px rgb(15 23 42 / 0.10), 0 2px 6px rgb(15 23 42 / 0.06);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--color-ink-50);
+    color: var(--color-ink-800);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition-property: all;
+  transition-duration: 150ms;
+}
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--color-brand-500);
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  transition: background-color 150ms;
+}
+.btn-primary:hover { background-color: var(--color-brand-600); }
+.btn-primary:focus { outline: none; box-shadow: 0 0 0 3px var(--color-brand-100); }
+
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--color-ink-200);
+  background-color: #ffffff;
+  color: var(--color-ink-700);
+  transition: all 150ms;
+}
+.btn-outline:hover { border-color: var(--color-brand-400); color: var(--color-brand-600); }
+.btn-outline:focus { outline: none; box-shadow: 0 0 0 3px var(--color-brand-100); }
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink-700);
+  transition: background-color 150ms;
+}
+.btn-ghost:hover { background-color: var(--color-ink-100); }
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 9999px;
+  background-color: var(--color-ink-100);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-ink-700);
+  cursor: pointer;
+  transition: background-color 150ms, color 150ms;
+}
+.chip:hover { background-color: var(--color-ink-200); }
+.chip-active { background-color: var(--color-brand-500); color: #ffffff; }
+.chip-active:hover { background-color: var(--color-brand-600); }
+
+@utility badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@utility input-field {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-ink-200);
+  background-color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: all 150ms;
+}
+.input::placeholder, .input-field::placeholder { color: var(--color-ink-400); }
+.input:focus, .input-field:focus {
+  outline: none;
+  border-color: var(--color-brand-400);
+  box-shadow: 0 0 0 3px var(--color-brand-100);
+}
+
+/* Use class name `input` from HTML — duplicate */
+.input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-ink-200);
+  background-color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: all 150ms;
+}
+
+@utility card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 200ms, transform 200ms;
+  cursor: pointer;
+}
+.card:hover { box-shadow: var(--shadow-card-hover); }
+.group:hover .group-hover\:text-brand-600 { color: var(--color-brand-600); }
+
+@utility section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-ink-900);
+}
+
+@utility price {
+  color: var(--color-brand-600);
+  font-weight: 700;
+}
+
+@utility icon-btn {
+  display: inline-flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  color: var(--color-ink-600);
+  transition: background-color 150ms;
+}
+.icon-btn:hover { background-color: var(--color-ink-100); }
+
+@utility nav-link {
+  font-size: 0.875rem;
+  color: var(--color-ink-700);
+  transition: color 150ms;
+}
+.nav-link:hover { color: var(--color-brand-600); }
+
+/* Misc */
+.img-zoom { transition: transform 0.5s ease; }
+.card:hover .img-zoom { transform: scale(1.05); }
+
+/* Modal animations */
+.modal-enter { animation: modal-in 0.2s ease-out; }
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.backdrop-enter { animation: fade-in 0.15s ease-out; }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Line clamp helpers (TW v4 already has but kept explicit) */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
